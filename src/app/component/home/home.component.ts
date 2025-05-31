@@ -39,10 +39,5 @@ export class HomeComponent implements OnInit {
       data:{type:'alert'}
     });
   }
-  onGithub(){
-    this.businessData.onGithub();
-  }
-  onLinkedin(){
-    this.businessData.onLinkedin();
-  }
+  
 }

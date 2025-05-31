@@ -51,12 +51,7 @@ export class WelcomeComponent implements OnInit{
     this.isLogging=true;
   }
 
-  onGithub(){
-    this.businessData.onGithub();
-  }
-  onLinkedin(){
-    this.businessData.onLinkedin();
-  }
+ 
 
 
 }

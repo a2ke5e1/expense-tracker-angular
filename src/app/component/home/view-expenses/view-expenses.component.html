@@ -26,9 +26,9 @@
     <div class="col-sm-6 col-xs-12">
       <mat-card>
         <mat-card-title style="padding:10px 20px;" >Category Summary</mat-card-title>
-        <mat-card-subtitle style="padding: 5px 20px;">Click to View</mat-card-subtitle>
+        <mat-card-subtitle style="padding: 5px 20px;" (click)="openPieChart()">Click to View</mat-card-subtitle>
         <mat-card-content>
-          <div style="padding-bottom: 20px;"><button class="btn-pie" (click)="openPieChart()"><img src="../../../assets/image/pie23.gif" width="250px" ></button>
+          <div style="padding-bottom: 20px;"><button class="btn-pie" (click)="openPieChart()"><img src="../../../assets/image/pie_chart.png " width="250px" ></button>
             </div>
           
         </mat-card-content>
@@ -39,7 +39,7 @@
         <mat-card-title style="padding: 10px 20px;">
           <p>Expense Monthly Summary</p>
         </mat-card-title>
-        <mat-card-subtitle style="padding-left: 20px;padding-bottom: 10px;">Click to View</mat-card-subtitle>
+        <mat-card-subtitle style="padding-left: 20px;padding-bottom: 10px;" (click)="openBarChart()">Click to View</mat-card-subtitle>
         <mat-card-content>
           <div style="padding-bottom: 5px;">
           <button class="btn-pie" (click)="openBarChart()">
