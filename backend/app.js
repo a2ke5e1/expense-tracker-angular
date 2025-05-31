@@ -1,4 +1,6 @@
 const express = require("express");
+require('dotenv').config()
+
 
 const app = express(); //express app, act as a middleware
 
@@ -8,7 +10,14 @@ const userRoutes=require('./routes/user');
 const expenseRoutes=require('./routes/expense');
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://root:'+process.env.MONGO_ATLAS_PW+'@cluster0.ywmh36y.mongodb.net/expenseTracker')
+
+const MONGODB_URI = process.env.MONGODB_URI; 
+
+if (!MONGODB_URI) {
+  throw Error("Please define MONGODB_URI in the env")
+}
+
+mongoose.connect(MONGODB_URI)
 .then(()=>{
   console.log("Connected to database");
 })

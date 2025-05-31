@@ -9,10 +9,4 @@ import { BusinessDataService } from 'src/app/services/business-data.service';
 export class FooterComponent {
   app_version:any;
   constructor(public businessData:BusinessDataService){this.app_version=sessionStorage.getItem('Version');}
-  onGithub(){
-    this.businessData.onGithub();
-  }
-  onLinkedin(){
-    this.businessData.onLinkedin();
-  }
 }
