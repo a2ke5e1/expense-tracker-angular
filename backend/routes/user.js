@@ -77,8 +77,8 @@ router.post("/LOGIN", (req, res, next) => {
           }
           //Valid Case generate token
           const token = jwt.sign(
-            { gmail: user.gmail, userId: user._id },
-            "raghav_garg_first_mean_project_this_can_be_anything",
+            { gmail: user.gmail },
+            process.env.JWT_KEY,
             { expiresIn: '1h' } // 1 hour
           );
           res.status(200).json({
@@ -135,6 +135,17 @@ router.get("/APP_VERSION", (req, res, next) => {
     message:'App Version successfully fetched',
     version:'v1.1.0',
     status:true,
+  });
+});
+
+router.post("/USER_SOURCE", (req, res, next) => {
+  const { email, action, source, createdAt } = req.body;
+
+
+  // For now, just acknowledge receipt
+  res.status(200).json({
+    message: 'User source data received',
+    received: { email, action, source, createdAt },
   });
 });
 

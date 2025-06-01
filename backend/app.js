@@ -25,6 +25,11 @@ mongoose.connect(MONGODB_URI)
   console.log("Not able to connect to database");
 })
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: '*'  
+}));
 
 app.use(bodyParser.json());
 
